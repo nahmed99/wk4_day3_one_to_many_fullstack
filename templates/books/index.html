@@ -10,7 +10,10 @@
                 <b>Genre:</b> {{book.genre}},
                 <b>Publisher:</b> {{book.publisher}},
                 <b>Author:</b> {{book.author.first_name}} {{book.author.last_name}}
+                <a href="/books/{{book.id}}" id="anch"> Select </a>
             </span>
+
+            
 
             <form action="/books/{{book.id}}/delete" method="POST">
                 <button type="submit">Delete</button>
@@ -19,5 +22,7 @@
 
 
     {% endfor %}
+
+
 
 {%  endblock %}

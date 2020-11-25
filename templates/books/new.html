@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- form -->
+<form action="/books" method="post">
+
+    <!-- form: input for title -->
+    <div>
+        <label form="title">Title:</label>
+        <input type="text" 
+            name="title" 
+            id="title" 
+            placeholder="Title" 
+            required 
+            autofocus
+            >
+    </div>
+
+    <!-- form: input for the genre -->
+    <div>
+        <label form="genre">Genre:</label>
+        <input type="text" 
+            name="genre" 
+            id="genre" 
+            placeholder="Genre" 
+            required
+            >
+    </div>
+
+
+    <!-- form: input for the publisher -->
+    <div>
+        <label form="publisher">Publisher:</label>
+        <input type="text" 
+            name="publisher" 
+            id="publisher" 
+            placeholder="Publisher" 
+            required
+            >
+    </div>
+
+
+    <!-- form: select the author from a list??? Or should this also be free-form text - for new authors? -->
+    <div>
+        <label for="author">Author:</label>
+        <select name="author_id" id="author">
+            <option value="">-- Please select author --</option>
+            {% for author in authors_list %}
+                <option value="{{author.id}}">{{ author.first_name }} {{author.last_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+
+    <!-- form: submit button - add task -->
+    <button type="submit">Add Book</button>
+
+</form>
+{% endblock %}
