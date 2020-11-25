@@ -1,3 +1,10 @@
 body{
   font-family: "Helvetica", arial, sans-serif; font-size: 16px;
 }
+
+.book-details{
+  background-color: lightgray;
+  width: 75%;
+  padding: 3px;
+  margin: 15px;
+}
